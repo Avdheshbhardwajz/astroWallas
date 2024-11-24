@@ -1,4 +1,14 @@
 import { UiData } from "../models/section.modal.js";
+export const fetchData = async (req, res) => {
+  try{
+    const data = await UiData.find() ; 
+    res.status(200).json({ success: true, data });
+  } catch(error){
+     res.status(500).json({
+      success: "false",
+      message: error?.message,
+}
+
 
 export const fetchSection = async (req, res) => {
   try {
