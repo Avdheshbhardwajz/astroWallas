@@ -8,7 +8,7 @@ export const fetchData = async (req, res) => {
       success: "false",
       message: error?.message,
 } ) }
-
+ ;
 
 export const fetchSection = async (req, res) => {
   try {
