@@ -7,7 +7,7 @@ export const fetchData = async (req, res) => {
      res.status(500).json({
       success: "false",
       message: error?.message,
-}
+} ) }
 
 
 export const fetchSection = async (req, res) => {
