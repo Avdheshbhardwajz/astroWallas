@@ -1,14 +1,16 @@
 import { UiData } from "../models/section.modal.js";
+
 export const fetchData = async (req, res) => {
-  try{
-    const data = await UiData.find() ; 
+  try {
+    const data = await UiData.find();
     res.status(200).json({ success: true, data });
-  } catch(error){
-     res.status(500).json({
+  } catch (error) {
+    res.status(500).json({
       success: "false",
       message: error?.message,
-} ) }
- ;
+    });
+  }
+};
 
 export const fetchSection = async (req, res) => {
   try {
@@ -52,7 +54,7 @@ export const editSection = async (req, res) => {
         message: `No data found for the provided section: ${sectionName}`,
       });
     }
-    
+
     existingData.data = data;
     await existingData.save();
     res.status(200).json({ success: true, message: "Data updated" });
